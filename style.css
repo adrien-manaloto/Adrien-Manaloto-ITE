@@ -611,7 +611,9 @@ nav a:hover {
 
   nav {
     padding: 15px 30px;
-    justify-content: center;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
   }
 
 
@@ -651,8 +653,10 @@ nav a:hover {
 
   .menu-toggle {
     display: block;
+    font-size: 28px;
+    cursor: pointer;
+    margin-left: auto;
   }
-
 
 
   .hero {
@@ -662,6 +666,11 @@ nav a:hover {
   }
 
 
+  .logo {
+    margin-left: auto;
+  }
+
+    
   .portrait {
     width: 70%;
   }
@@ -798,6 +807,7 @@ nav a:hover {
   opacity: 1;                 
   transform: translateY(0);  
 }
+
 
 
 
