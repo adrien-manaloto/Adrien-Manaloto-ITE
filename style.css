@@ -613,7 +613,6 @@ nav a:hover {
     padding: 15px 30px;
     justify-content: space-between;
     display: flex;
-    align-items: center;
   }
 
 
@@ -807,6 +806,7 @@ nav a:hover {
   opacity: 1;                 
   transform: translateY(0);  
 }
+
 
 
 
