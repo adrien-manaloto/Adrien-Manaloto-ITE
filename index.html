@@ -25,7 +25,7 @@
   </nav>
 
 
-  <section class="hero" id="home">
+  <section class="hero fade-in" id="home">
     <div>
       <img class="portrait" src="personal icons/portrait.png" alt="Portrait" />
     </div>
@@ -39,7 +39,7 @@
   </section>
 
 
-  <section class="about" id="about">
+  <section class="about fade-in" id="about">
     <h2> About </h2>
     <p>
       Hi! I'm <span class="highlight">Adrien Manaloto</span>, a <span class="highlight">BSIT student</span> passionate
@@ -59,7 +59,7 @@
   </section>
 
 
-  <section class="skills" id="skills">
+  <section class="skills fade-in" id="skills">
     <h2> My Skills </h2>
 
     <div class="skills-container">
@@ -96,7 +96,7 @@
   </section>
 
 
-  <section class="projects" id="projects">
+  <section class="projects fade-in" id="projects">
     <h2> My Works </h2>
   
     <div class="projects-container">
@@ -133,7 +133,7 @@
   </section>
 
 
-  <section class="experience" id="experience">
+  <section class="experience fade-in" id="experience">
   <h2>My Experience</h2>
 
   <div class="experience-container">
@@ -175,7 +175,7 @@
 </section>
 
 
-<section class="testimonials" id="testimonials">
+<section class="testimonials fade-in" id="testimonials">
   <h2>Testimonials</h2>
 
   <div class="testimonials-container">
@@ -226,20 +226,19 @@
     menuToggle.classList.toggle("active");
   });
 
-  window.addEventListener("DOMContentLoaded", () => {
-    const animatedSections = document.querySelectorAll("section, nav, footer");
+  const fadeElements = document.querySelectorAll(".fade-in");
 
-    animatedSections.forEach((el, index) => {
-      el.style.opacity = "0";
-      el.style.transform = "translateY(30px)";
-      el.style.transition = "all 0.8s ease-out";
-
-      setTimeout(() => {
-        el.style.opacity = "1";
-        el.style.transform = "translateY(0)";
-      }, 200 * index);
+  function handleScroll() {
+    fadeElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        el.classList.add("show");
+      }
     });
-  });
+  }
+
+  window.addEventListener("scroll", handleScroll);
+  window.addEventListener("load", handleScroll);
 </script>
 
 </body>
@@ -269,5 +268,6 @@
 
   <p class="footer-copy">© 2025 Adrien Manaloto. All rights reserved.</p>
 </footer>
+
 
 </html>
